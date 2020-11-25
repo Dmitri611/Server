@@ -1,0 +1,41 @@
+.fonts {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: wheat;
+}
+
+.button {
+    height: 40px;
+    width: 200px;
+    background-color: black;
+    color: wheat;
+    font-size: 20px;
+}
+
+body {
+    background: white;
+    /* Цвет фона веб-страницы */
+}
+
+table {
+    width: 300px;
+    /* Ширина таблицы */
+    border-collapse: collapse;
+    /* Убираем двойные линии между ячейками */
+    border: 2px solid white;
+    /* Прячем рамку вокруг таблицы */
+}
+
+td, th {
+    padding: 3px;
+    /* Поля вокруг содержимого таблицы */
+    border: 1px solid maroon;
+    /* Параметры рамки */
+    text-align: left;
+    /* Выравнивание по левому краю */
+}
+
+.button__add{
+    background-color: black;
+    color: wheat;
+    font-size: 15px;
+}

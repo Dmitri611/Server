@@ -1,13 +1,20 @@
+const btnLogin = document.getElementById("btn-login");
 
-
-const btnLogin = document.getElementById('btn-login');
-
-btnLogin.addEventListener('click',function() {
-    console.log('jh');
-    const login = document.getElementById('login');
-    const password = document.getElementById('password');
-    const data = {login,password};
+btnLogin.addEventListener(
+  "click",
+  async function () {
     
-    axios.post('dfdfsfsd', data);
-},false);
-
+    const login = document.getElementById("login");
+    const password = document.getElementById("password");
+    const data =  { login: login.value, password: password.value };
+    console.log(data);
+    const res = await axios.post("http://localhost:3000/login", data);
+    console.log(res.data);
+    if(res.data) {
+      window.location.href = 'main';
+    } else {
+      alert('неверный логин или пароль')
+    }
+  },
+  false
+);

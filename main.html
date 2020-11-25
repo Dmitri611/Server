@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="button">Загрузить данные</button>
+    <input type="text" id="addName" placeholder="Имя и Фамилия" name="addName" required>
+    <button class="button__add" id="button-add">Добавить Студента</button>
+    <input type="text" id="studentId" placeholder="№ Студента" name="addscore" required>
+
+    <select id="subject">
+        <option value="0">Выберите предмет</option>
+        <option value="OneSubject">Тау</option>
+        <option value="RgrOne">РГР ТАУ №1</option>
+        <option value="RgrTwo">РГР ТАУ №2</option>
+        <option value="TwoSubject">ПСП</option>
+        <option value="Kursach">Курсовой проект ПСП</option>
+        <option value="ThreeSubject">Метрология</option>
+        <option value="FourSubject">ТМиП</option>
+        <option value="FiveSubject">Физра</option>
+        <option value="SixSubject">ТП</option>
+        <option value="SevenSubject">КСКР</option>
+        <option value="EightSubject">История</option>
+        <option value="NineSubject">БЗ</option>
+    </select>
+    <select id="score">
+        <option value="0">Оценка</option>
+        <option value="неуд">неуд</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="зачет">зачет</option>
+        <option value="не_зачет">не зачет</option>
+    </select>
+    <button id="updateScore" class="button__add">Поставить оценку</button>
+    <table>
+        <tr>
+            <th>№</th>;</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Тау</th>
+            <th>РГР ТАУ №1</th>
+            <th>РГР ТАУ №2</th>
+            <th>ПСП</th>
+            <th>Курсовой проект ПСП</th>
+            <th>Метрология</th>
+            <th>ТМиП</th>
+            <th>Физра</th>
+            <th>ТП</th>
+            <th>КСКР</th>
+            <th>История</th>
+            <th>БЗ</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th>2</th>
+            <td></td>
+            <td></td>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <th>3</th>
+            <td></td>
+            <td></td>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </table>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
+</body>
+
+</html>
