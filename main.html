@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <button class="button">Загрузить данные</button>
+    <button class="button" id="getUsers">Загрузить данные</button>
     <input type="text" id="addName" placeholder="Имя и Фамилия" name="addName" required>
     <button class="button__add" id="button-add">Добавить Студента</button>
     <input type="text" id="studentId" placeholder="№ Студента" name="addscore" required>
@@ -43,7 +43,7 @@
         <option value="не_зачет">не зачет</option>
     </select>
     <button id="updateScore" class="button__add">Поставить оценку</button>
-    <table>
+    <table id="table">
         <tr>
             <th>№</th>;</th>
             <th>Имя</th>
@@ -61,61 +61,10 @@
             <th>История</th>
             <th>БЗ</th>
         </tr>
-        <tr>
-            <td>1</td>
-            <td></td>
-            <td></td>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-        <tr>
-            <th>2</th>
-            <td></td>
-            <td></td>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-        <tr>
-            <th>3</th>
-            <td></td>
-            <td></td>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
+        
+        
     </table>
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="./main.js"></script>
 </body>
