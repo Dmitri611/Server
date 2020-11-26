@@ -49,8 +49,7 @@ app.get("/main", function (req, res) {
 app.get("/getUsers", async function (req, res) {
   const query = `Select * From students`;
 
-  connection.query(query, (err,data) => {
-    
+  connection.query(query, (err, data) => {
     res.send(data);
   });
 });
@@ -73,15 +72,12 @@ app.post("/addUser", function (req, res) {
   const firstName = str[0];
   const lastName = str[1];
   const query = `INSERT INTO students(FirstName, LastName) VALUES ("${firstName}", "${lastName}")`;
-  console.log(query);
   connection.query(query);
 });
 
 //добавить оценку
 app.post("/updateScore", function (req, res) {
   let data = req.body;
-  console.log(data);
-
   const query = `UPDATE students SET ${data.subject} = "${
     data.score
   }" WHERE Id = ${+data.id}`;
