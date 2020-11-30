@@ -27,11 +27,9 @@ btnGetUsers.addEventListener("click", async () => {
     const tr = document.createElement("tr");
     for (const [key, value] of Object.entries(element)) {
       const td = document.createElement("td");
-      if(value == null) {
-        td.textContent = ' ';
-      } else{
-        td.textContent = `${value}`;
-      }
+      if(value !== null) {
+        td.textContent = value;
+       } 
       tr.appendChild(td);
     }
     table.appendChild(tr);
