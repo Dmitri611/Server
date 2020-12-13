@@ -5,14 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./main.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
 <body>
-    <button class="button" id="getUsers">Загрузить данные</button>
+    <select  id="getUsers" class="button">
+        <option selected value="0">Выбрать группу</option>
+        <option value="It_6">Ит-6</option>
+        <option value="It_7">Ит-7</option>
+        <option value="It_8">Ит-8</option>
+        <option value="It_9">Ит-9</option>
+        <option value="It_10">Ит-10</option>
+    </select>
     <input type="text" id="addName" placeholder="Имя и Фамилия" name="addName" required>
+    <select  id="addUserGroup">
+        <option selected value="0">Выбрать группу</option>
+        <option value="It_6">Ит-6</option>
+        <option value="It_7">Ит-7</option>
+        <option value="It_8">Ит-8</option>
+        <option value="It_9">Ит-9</option>
+        <option value="It_10">Ит-10</option>
+    </select>
     <button class="button__add" id="button-add">Добавить Студента</button>
-    <input type="text" id="studentId" placeholder="№ Студента" name="addscore" required>
+    <input type="text" id="studentName" placeholder="№ Студента" name="addscore" required>
 
     <select id="subject">
         <option value="0">Выберите предмет</option>
@@ -42,29 +62,44 @@
         <option value="зачет">зачет</option>
         <option value="не_зачет">не зачет</option>
     </select>
+    <select  id="updateScoreSelect">
+        <option selected value="0">Выбрать группу</option>
+        <option value="It_6">Ит-6</option>
+        <option value="It_7">Ит-7</option>
+        <option value="It_8">Ит-8</option>
+        <option value="It_9">Ит-9</option>
+        <option value="It_10">Ит-10</option>
+    </select>
     <button id="updateScore" class="button__add">Поставить оценку</button>
-    <table id="table">
-        <tr>
-            <th>№</th>
-            <th>Имя</th>
-            <th>Фамилия</th>
-            <th>Тау</th>
-            <th>РГР ТАУ №1</th>
-            <th>РГР ТАУ №2</th>
-            <th>ПСП</th>
-            <th>Курсовой проект ПСП</th>
-            <th>Метрология</th>
-            <th>ТМиП</th>
-            <th>Физра</th>
-            <th>ТП</th>
-            <th>КСКР</th>
-            <th>История</th>
-            <th>БЗ</th>
-        </tr>
+    <table class="table table-dark" id="table">
+        <thead>
+            <tr>
+            <th scope="col">№</th>
+            <th scope="col">Имя</th>
+            <th scope="col">Фамилия</th>
+            <th scope="col">Отчество</th>
+            <th scope="col">Тау</th>
+            <th scope="col">РГР ТАУ №1</th>
+            <th scope="col">РГР ТАУ №2</th>
+            <th scope="col">ПСП</th>
+            <th scope="col">Курсовой проект ПСП</th>
+            <th scope="col">Метрология</th>
+            <th scope="col">ТМиП</th>
+            <th scope="col">Физра</th>
+            <th scope="col">ТП</th>
+            <th scope="col">КСКР</th>
+            <th scope="col">История</th>
+            <th scope="col">БЗ</th>
+          </tr>
+          </thead>
+          <tbody id="tbody">
+           
+          </tbody>
         
         
     </table>
 
+    
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="./main.js"></script>
 </body>

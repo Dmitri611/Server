@@ -3,28 +3,40 @@
     color: wheat;
 }
 body{
-    display: block;
+    
     background: url(./img/1.jpg) no-repeat;
     background-size: cover;
     text-align: center;
-    margin: 320px auto;
+    
+
 }
 
 .button{
     margin: 0 auto;
     margin-top: 1rem;
     background-color:rebeccapurple ;
-    
 }
 
 .container{
-    display: flex;
+    display: block;
     text-align: center;
     width: max-content;
     margin:0 auto;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: black;
 }
 
 .container input{
     margin: 1rem;
 }
 
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    margin: 15% auto;
+}

@@ -47,7 +47,8 @@ app.get("/main", function (req, res) {
 });
 
 app.get("/getUsers", async function (req, res) {
-  const query = `Select * From students`;
+  const group = req.query.group;
+  const query = `Select * From ${group}`;
 
   connection.query(query, (err, data) => {
     res.send(data);
@@ -67,20 +68,17 @@ app.post("/login", function (req, res) {
 
 //Добавить студента
 app.post("/addUser", function (req, res) {
-  let data = req.body.name;
-  const str = data.split(" ");
-  const firstName = str[0];
-  const lastName = str[1];
-  const query = `INSERT INTO students(FirstName, LastName) VALUES ("${firstName}", "${lastName}")`;
+  const { firstName, lastName, subName,group } = req.body;
+
+  const query = `INSERT INTO ${group}(FirstName, LastName, SubName) VALUES ("${firstName}", "${lastName}","${subName}")`;
   connection.query(query);
 });
 
 //добавить оценку
 app.post("/updateScore", function (req, res) {
-  let data = req.body;
-  const query = `UPDATE students SET ${data.subject} = "${
-    data.score
-  }" WHERE Id = ${+data.id}`;
+  const { subject, score, firstName, lastName, subName,group } = req.body;
+  const query = `UPDATE ${group} SET ${subject}="${score}" WHERE FirstName="${firstName}" AND LastName="${lastName}" AND SubName="${subName}"`;
+  console.log(query);
   connection.query(query);
 });
 

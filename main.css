@@ -14,25 +14,28 @@
 body {
     background: white;
     /* Цвет фона веб-страницы */
+    margin: 10% 10%;
+    background-color: rgb(69, 192, 192);
 }
 
-table {
-    width: 300px;
+.tableCustom {
+    max-width: 300px;
     /* Ширина таблицы */
     border-collapse: collapse;
     /* Убираем двойные линии между ячейками */
     border: 2px solid white;
     /* Прячем рамку вокруг таблицы */
+    margin: 10% auto;
 }
 
-td, th {
+/* td, th {
     padding: 3px;
-    /* Поля вокруг содержимого таблицы */
+    
     border: 1px solid maroon;
-    /* Параметры рамки */
+    
     text-align: left;
-    /* Выравнивание по левому краю */
-}
+    
+} */
 
 .button__add{
     background-color: black;

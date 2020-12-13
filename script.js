@@ -9,6 +9,7 @@ btnLogin.addEventListener(
     const res = await axios.post("http://localhost:3000/login", data);
     if (res.data) {
       window.location.href = "main";
+      
     } else {
       alert("неверный логин или пароль");
     }
