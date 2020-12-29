@@ -1,45 +1,29 @@
-const btnAddUser = document.getElementById("button-add");
+const switchPage = document.getElementById("switchPage");
 
-btnAddUser.addEventListener("click", async () => {
-  const fullName = document.getElementById("addName").value;
-  const arrFullName = fullName.split(" ");
-  const firstName = arrFullName[0];
-  const lastName = arrFullName[1];
-  const subName = arrFullName[2];
-  const group = document.getElementById("addUserGroup").value;
-
-  const data = { firstName, lastName, subName, group };
-  console.log(group);
-  const res = await axios.post("http://localhost:3000/addUser", data);
+switchPage.addEventListener("click", async () => {
+  window.location.href = "http://localhost:3000/addStudent";
 });
 
 const btnUpdateScore = document.getElementById("updateScore");
 
 btnUpdateScore.addEventListener("click", async () => {
-  const fullName = document.getElementById("studentName").value;
-  const arrFullName = fullName.split(" ");
-  const firstName = arrFullName[0];
-  const lastName = arrFullName[1];
-  const subName = arrFullName[2];
+  const id = document.getElementById("studentName").value;
+
   const subject = document.getElementById("subject").value;
   const score = document.getElementById("score").value;
-  const group = document.getElementById("updateScoreSelect").value;
+  const group = document.getElementById("getUsers").value;
 
-  const data = { firstName, lastName, subName, subject, score, group };
+  const data = { id, subject, score, group };
 
   const res = await axios.post("http://localhost:3000/updateScore", data);
+  await updateTable(group);
 });
 
 const btnGetUsers = document.getElementById("getUsers");
 
-btnGetUsers.addEventListener("change", async (e) => {
-  if (e.target.value == 0) {
-    return;
-  }
-  const query = `http://localhost:3000/getUsers?group=${e.target.value}`;
+const updateTable = async (group) => {
+  const query = `http://localhost:3000/getUsers?group=${group}`;
   const res = await axios.get(query);
-
-  console.log(res);
 
   const tbody = document.createElement("tbody");
   const table = document.getElementById("table");
@@ -84,10 +68,15 @@ btnGetUsers.addEventListener("change", async (e) => {
         tr.appendChild(td);
       }
     }
-    console.log(tbody);
+
     tbody.appendChild(tr);
     table.appendChild(tbody);
-    console.log(tbody);
-
   });
+};
+
+btnGetUsers.addEventListener("change", async (e) => {
+  if (e.target.value == 0) {
+    return;
+  }
+  await updateTable(e.target.value);
 });

@@ -12,10 +12,12 @@
 }
 
 body {
-    background: white;
-    /* Цвет фона веб-страницы */
-    margin: 10% 10%;
-    background-color: rgb(69, 192, 192);
+    display: block;
+    text-align: center;
+}
+
+.body_color {
+    background-color: aqua;
 }
 
 .tableCustom {
@@ -41,4 +43,8 @@ body {
     background-color: black;
     color: wheat;
     font-size: 15px;
+}
+
+.table_margin {
+    margin: 10px auto;
 }

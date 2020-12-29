@@ -26,6 +26,18 @@ app.get("/", function (request, response) {
   response.sendFile(__dirname + "/index.html");
 });
 
+app.get("/addStudent", function (request, response) {
+  response.sendFile(__dirname + "/addStudent.html");
+});
+
+app.get("/addStudent.js", function (req, res) {
+  res.sendFile(__dirname + "/" + "addStudent.js");
+});
+
+app.get("/addStudent.css", function (req, res) {
+  res.sendFile(__dirname + "/" + "addStudent.css");
+});
+
 app.get("/style.css", function (req, res) {
   res.sendFile(__dirname + "/" + "style.css");
 });
@@ -68,18 +80,20 @@ app.post("/login", function (req, res) {
 
 //Добавить студента
 app.post("/addUser", function (req, res) {
-  const { firstName, lastName, subName,group } = req.body;
+  let { firstName, lastName, subName,group } = req.body;
 
   const query = `INSERT INTO ${group}(FirstName, LastName, SubName) VALUES ("${firstName}", "${lastName}","${subName}")`;
+  
   connection.query(query);
 });
 
 //добавить оценку
 app.post("/updateScore", function (req, res) {
-  const { subject, score, firstName, lastName, subName,group } = req.body;
-  const query = `UPDATE ${group} SET ${subject}="${score}" WHERE FirstName="${firstName}" AND LastName="${lastName}" AND SubName="${subName}"`;
-  console.log(query);
+  const { subject, score, id,group } = req.body;
+  const query = `UPDATE ${group} SET ${subject}="${score}" WHERE id="${+id}"`;
+  
   connection.query(query);
+  res.send(true);
 });
 
 app.listen(3000);
