@@ -12,7 +12,7 @@ body{
 }
 
 .button{
-    margin: 0 auto;
+    margin: 10px;
     margin-top: 1rem;
     background-color:rebeccapurple ;
 }
